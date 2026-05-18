@@ -7,10 +7,10 @@
  *     ListNode(int val) { this.val = val; }
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
-**/
+ */
 class Solution {
-    public ListNode mergeTwoSortedLL(ListNode list1, ListNode list2) {
-        ListNode dummy = new ListNode(-1);
+    public ListNode merge(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(-1, null);
 
         ListNode temp = dummy;
 
@@ -24,7 +24,8 @@ class Solution {
                 list2 = list2.next;
             }
             temp = temp.next;
-        } 
+        }
+
         if (list1 != null) {
             temp.next = list1;
         }
@@ -35,6 +36,10 @@ class Solution {
         return dummy.next;
     }
     public ListNode findMiddle(ListNode head) {
+        if (head == null && head.next == null) {
+            return head;
+        }
+
         ListNode slow = head;
         ListNode fast = head.next;
 
@@ -42,9 +47,10 @@ class Solution {
             slow = slow.next;
             fast = fast.next.next;
         }
-        
+
         return slow;
     }
+
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -59,7 +65,7 @@ class Solution {
         left = sortList(left);
         right = sortList(right);
 
-        return mergeTwoSortedLL(left, right);
-
+        return merge(left, right);
+        
     }
 }
