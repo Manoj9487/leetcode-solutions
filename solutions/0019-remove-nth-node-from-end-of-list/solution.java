@@ -13,17 +13,22 @@ class Solution {
         if (head == null) {
             return null;
         }
-        int len = 0;
+
+        int cnt = 0;
         ListNode temp = head;
+
         while(temp != null) {
-            len += 1;
+            cnt++;
             temp = temp.next;
         }
-        if (len == n) {
+
+        if (cnt == n) {
             return head.next;
         }
-        int res = len - n;
+
+        int res = cnt - n;
         temp = head;
+        
         while(temp != null) {
             res--;
             if (res == 0) {
@@ -31,8 +36,9 @@ class Solution {
             }
             temp = temp.next;
         }
-        
+
         temp.next = temp.next.next;
+
         return head;
     }
 }
