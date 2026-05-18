@@ -19,13 +19,6 @@ public class Solution {
             d1 = d1 == null ? headB : d1.next;
             d2 = d2 == null ? headA : d2.next;
         }
-
         return d1;
-
-
-
-
-
-
     }
 }
