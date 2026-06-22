@@ -1,4 +1,4 @@
 solutions/**/README.md linguist-documentation=true
-solutions/**/*.cpp linguist-detectable=true
 solutions/**/*.py linguist-detectable=true
 solutions/**/*.java linguist-detectable=true
+solutions/**/*.c linguist-detectable=true
