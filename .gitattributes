@@ -1,0 +1,3 @@
+solutions/**/README.md linguist-documentation=true
+solutions/**/*.py linguist-detectable=true
+solutions/**/*.java linguist-detectable=true
